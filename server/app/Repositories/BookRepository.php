@@ -6,8 +6,13 @@ use App\Models\Book;
 
 class BookRepository implements BookRepositoryInterface
 {
-  public function all()
+  public function all(array $params = [])
   {
+    if (isset($params['keyword'])) {
+      return Book::whereLike('title', $params['keyword'])
+        ->orWhereLike('author', $params['keyword'])
+        ->get();
+    }
     return Book::all();
   }
 

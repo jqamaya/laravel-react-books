@@ -36,9 +36,9 @@ class BookService
     return $this->bookRepository->delete($id);
   }
 
-  public function all()
+  public function all(array $query = [])
   {
-    return $this->bookRepository->all();
+    return $this->bookRepository->all($query);
   }
   
   public function find($id)

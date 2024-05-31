@@ -17,9 +17,13 @@ class BookController extends Controller
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		$books = $this->bookService->all();
+		$query = [];
+		if ($request->has('keyword')) {
+			$query['keyword'] = $request->get('keyword');
+		}
+		$books = $this->bookService->all($query);
 
 		return response()->json([
 			'status' => 200,
