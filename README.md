@@ -14,7 +14,7 @@ CRUD of books using Laravel for backend and ReactJS for frontend.
 ---
 ## SERVER
 ### Requirements
-- [Laravel](https://laravel.com/docs/6.x)
+- [Laravel](https://laravel.com/docs/11.x)
 - [PHP](https://www.php.net/)
 - [MySQL](https://www.mysql.com/)
 ### Local Setup
@@ -26,3 +26,4 @@ CRUD of books using Laravel for backend and ReactJS for frontend.
 1. Run the command `php artisan key:generate` to generate an app key which will automatically update the `.env` file.
 1. Run the command `php artisan migrate` to run the migrations and create database tables.
 1. Run the command `php artisan serve` to run the Laravel app. This will run on `http://localhost:8000`
+1. Run the command `php artisan test` to run the tests under `tests` directory.
