@@ -43,9 +43,8 @@ export default function BookSearch() {
           value={searchKeyword}
           onChange={(e) => setSearchKeyword(e.target.value)}
           sx={{
-            minWidth: 400,
+            minWidth: 300,
             '& .MuiOutlinedInput-input': {
-              // py: 1.25,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',

@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import {
   Box,
+  CircularProgress,
   IconButton,
   Paper,
   Table,
@@ -46,6 +47,7 @@ export default function BooksTable() {
   const {
     books,
     selectedBook,
+    isFetching,
     setSelectedBook,
     setShowModal,
     updateBooks,
@@ -71,17 +73,18 @@ export default function BooksTable() {
       return;
     }
 
-    deleteMutation.mutate(1, {
+    deleteMutation.mutate(selectedBook.id, {
       onSuccess: (data) => {
-        updateBooks();
         setShowDeleteModal(false);
         setMessage({
           type: 'success',
           value: `Success: "${selectedBook.title}" has been deleted.`,
         })
+        updateBooks();
+        setSelectedBook(undefined);
       },
       onError: (err) => {
-        console.log(err)
+        console.error(err)
         setShowDeleteModal(false);
         setMessage({
           type: 'error',
@@ -89,7 +92,7 @@ export default function BooksTable() {
         });
       }
     })
-  }, [selectedBook, deleteMutation, updateBooks]);
+  }, [selectedBook, deleteMutation, updateBooks, setSelectedBook]);
 
   const onCloseDeleteModal = () => {
     setShowDeleteModal(false);
@@ -213,7 +216,12 @@ export default function BooksTable() {
               ? renderBooks()
               : (
                 <TableCell colSpan={3} align="center">
-                  No books found.
+                  <Box display="flex" justifyContent="center" alignItems="center">
+                    {isFetching && <CircularProgress size={14} />}
+                    <Typography variant='body1' sx={{ ml: 1 }}>
+                      {isFetching ? 'Fetching data...' : 'No books found.'}
+                    </Typography>
+                  </Box>
                 </TableCell>
               )}
           </TableBody>

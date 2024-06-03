@@ -48,7 +48,6 @@ export default function ExportBooksModal({ open, onClose }: Props) {
 
   const handleExport = useCallback(() => {
     if (!dataExport && !fileType) return;
-    console.log({ dataExport, fileType })
     let data: Array<Partial<Book>> = [];
     switch (dataExport) {
       case 'title':
