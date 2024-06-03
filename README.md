@@ -1,6 +1,6 @@
 # Laravel React Books
 CRUD of books using Laravel for backend and ReactJS for frontend.
-
+- [Video Recording](https://drive.google.com/file/d/1oPd6JFdlKPODtPvJmDieUok4REyypmRS/view?usp=sharing)
 ---
 
 ## CLIENT
