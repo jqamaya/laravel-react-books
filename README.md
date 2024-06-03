@@ -1,6 +1,23 @@
 # Laravel React Books
 CRUD of books using Laravel for backend and ReactJS for frontend.
 - [Video Recording](https://drive.google.com/file/d/1oPd6JFdlKPODtPvJmDieUok4REyypmRS/view?usp=sharing)
+
+### Screenshots
+Books List:
+![image](https://github.com/jqamaya/laravel-react-books/assets/13392538/88ac28e1-93e7-4646-a7d5-30098a21776c)
+
+Books List w/ Search:
+![image](https://github.com/jqamaya/laravel-react-books/assets/13392538/edfd56bc-10c9-4622-a575-25fc0a5e8cb4)
+
+Add New Book:
+![image](https://github.com/jqamaya/laravel-react-books/assets/13392538/03e69e8b-694e-4d30-8924-4d6d498f17f7)
+
+Edit Book:
+![image](https://github.com/jqamaya/laravel-react-books/assets/13392538/26098680-a095-4c04-9721-de070123e007)
+
+Delete Book Confirmation:
+![image](https://github.com/jqamaya/laravel-react-books/assets/13392538/4c1fd58c-5302-49e7-ac2c-2e458aeb6c53)
+
 ---
 
 ## CLIENT
